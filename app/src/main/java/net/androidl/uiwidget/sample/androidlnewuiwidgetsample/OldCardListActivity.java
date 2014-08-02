@@ -4,7 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Adapter;
+import android.widget.ListView;
+
 import net.androidl.uiwidget.sample.androidlnewuiwidgetsample.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class OldCardListActivity extends Activity {
 
@@ -12,6 +18,20 @@ public class OldCardListActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_old_card_list);
+
+        List shigaInfo = new ArrayList();
+        shigaInfo.add(new LocalGovInfo("大津市", R.drawable.otsu));
+        shigaInfo.add(new LocalGovInfo("草津市", R.drawable.kusatsu));
+        shigaInfo.add(new LocalGovInfo("近江八幡市", R.drawable.omihachiman));
+        shigaInfo.add(new LocalGovInfo("野洲市", R.drawable.yasu));
+        shigaInfo.add(new LocalGovInfo("湖南市", R.drawable.konan));
+        shigaInfo.add(new LocalGovInfo("東近江市", R.drawable.higashiomi));
+        shigaInfo.add(new LocalGovInfo("日野町", R.drawable.hino));
+        shigaInfo.add(new LocalGovInfo("多賀町 ", R.drawable.taga));
+
+        ListView lv = (ListView)findViewById(R.id.listView);
+        lv.setAdapter(new OldCardListAdpter(this, shigaInfo));
+        lv.setVerticalScrollBarEnabled(false);
     }
 
 
