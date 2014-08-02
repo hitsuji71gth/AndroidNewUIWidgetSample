@@ -1,43 +1,24 @@
 package net.androidl.uiwidget.sample.androidlnewuiwidgetsample;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
+import net.androidl.uiwidget.sample.androidlnewuiwidgetsample.R;
 
-
-public class MyActivity extends Activity {
+public class NewCardListActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my);
-
-        Button btnLvAndLl = (Button)findViewById(R.id.button);
-        btnLvAndLl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), OldCardListActivity.class));
-            }
-        });
-
-        Button btnRvAndCv = (Button)findViewById(R.id.button2);
-        btnRvAndCv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), NewCardListActivity.class));
-            }
-        });
+        setContentView(R.layout.activity_new_card_list);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.my, menu);
+        getMenuInflater().inflate(R.menu.new_card_list, menu);
         return true;
     }
 
